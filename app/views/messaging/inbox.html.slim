@@ -1,6 +1,15 @@
-h1 Messaging#inbox
-p Find me in app/views/messaging/inbox.html.slim
 = render partial: 'mailbox_menu'
-- @inbox.each do |conversation|
-	.conversation
-		= link_to conversation.subject, conversation_path(conversation), class: conversation.receipts_for(current_user).last.is_read? ? "read" : ""
+
+table.table
+	tr
+		th Subject
+		th From
+		th Date
+	- @inbox.each do |conversation|
+		tr class=(conversation.receipts_for(current_user).last.is_unread? ? "warning" : "")
+			td
+				= link_to conversation.subject, conversation_path(conversation)
+			td
+				= conversation.receipts_for(current_user).last.message.sender.name
+			td
+				= time_ago_in_words(conversation.receipts_for(current_user).last.created_at)

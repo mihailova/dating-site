@@ -1,7 +1,7 @@
 = render partial: 'mailbox_menu'
 
 .conversation
-	- @conversation.receipts_for(current_user).reverse.each do |receipt|
+	- @conversation.receipts_for(current_user).each do |receipt|
 		p
 			= receipt.message.sender.name + ":"
 			= receipt.message.body

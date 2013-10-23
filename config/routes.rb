@@ -1,10 +1,22 @@
 DatingSite::Application.routes.draw do
+  get "inbox" => "messaging#inbox", as: :inbox
+  get "sentbox" => "messaging#sentbox", as: :sentbox
+  get "trash" => "messaging#trash", as: :trash
+  get 'conversation/:id' => "messaging#show_conversation", as: :conversation
+  post 'reply_conversation/:id' => "messaging#reply", as: :reply
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'users#index'
+
+  resources :users, only: :show do 
+    member do 
+      post 'send_message'
+    end
+  end
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

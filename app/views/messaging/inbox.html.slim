@@ -1,0 +1,6 @@
+h1 Messaging#inbox
+p Find me in app/views/messaging/inbox.html.slim
+= render partial: 'mailbox_menu'
+- @inbox.each do |conversation|
+	.conversation
+		= link_to conversation.subject, conversation_path(conversation), class: conversation.receipts_for(current_user).last.is_read? ? "read" : ""

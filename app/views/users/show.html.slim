@@ -1,0 +1,8 @@
+
+= @user.name
+
+form action=send_message_user_path(@user) method='post'
+	input type='text' name="message_subject"
+	textarea name="message_body"
+	input type='submit' value= "Send"
+

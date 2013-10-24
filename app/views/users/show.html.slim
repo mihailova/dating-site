@@ -1,5 +1,9 @@
 
-= @user.name
+p= @user.name
+p= @user.age
+p= @user.location
+p= @user.gender
+p= @user.search_for
 
 form action=send_message_user_path(@user) method='post'
 	input type='text' name="message_subject"

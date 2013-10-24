@@ -1,0 +1,12 @@
+<html lang="en">
+  <head>
+  </head>
+  <body>
+    <script type="text/javascript"> 
+    if(window.opener) {
+        window.opener.location.href = "<%= @redirect_to %>"
+        window.close();
+      }
+    </script>
+  </body>
+</html>

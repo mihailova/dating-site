@@ -14,4 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
+//= require libs/jquery.popups.js
+//= require libs/jquery.forms.js
+//= require libs/jquery.ui.js
+//= require libs/jquery.autocomplete.js
 //= require_tree .

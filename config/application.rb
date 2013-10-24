@@ -6,6 +6,15 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
+config_file = File.expand_path('../application.yml', __FILE__)
+if File.file?(config_file)
+  config = YAML.load(File.read(config_file))
+  config.merge! config.fetch(Rails.env, {})
+  config.each do |key,value|
+    ENV[key] = value.to_s
+  end
+end
+
 module DatingSite
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -19,5 +28,8 @@ module DatingSite
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+    config.autoload_paths += %W(#{config.root}/app/services)
+
+    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
   end
 end

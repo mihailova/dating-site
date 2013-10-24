@@ -1,0 +1,106 @@
+.nyroModalBg {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 9999;
+}
+.nmReposition {
+  position: absolute;
+}
+.nyroModalCloseButton {
+  top: -5px;
+  right: -5px;
+  width: 22px;
+  height: 22px;
+  text-indent: -9999em;
+  z-index: 10000;
+  background: #ffffff image-url('frontend/popup/close_popup.png') center center no-repeat;
+  border: 1px solid #c7c7c7;
+}
+.nyroModalTitle {
+  top: -26px;
+  left: 0;
+  margin: 0;
+    font-size: 1.1em;
+  color: #ddd;
+}
+.nyroModalCont {
+  position: absolute;
+  margin: 25px;
+  background: #fff;
+  z-index: 9999;
+  box-shadow: 0px 0px 20px #ababab;
+}
+.nyroModalCont iframe {
+  width: 600px;
+  height: 400px;
+}
+.nyroModalError {
+  border: 4px solid red;
+  color: red;
+  width: 250px;
+  height: 250px;
+}
+.nyroModalError div {
+  min-width: 0;
+  min-height: 0;
+  padding: 10px;
+}
+.nyroModalLink, .nyroModalDom, .nyroModalForm, .nyroModalFormFile {
+  position: relative;
+  min-height: 100px;
+  min-width: 660px;
+  max-width: 1000px;
+}
+.nyroModalImage, .nyroModalSwf, .nyroModalIframe, .nyroModalIframeForm {
+  position: relative;
+  overflow: hidden;
+}
+.nyroModalImage img {
+    vertical-align: top;
+}
+.nyroModalHidden {
+  left: -9999em;
+  top: -9999em;
+}
+.nyroModalLoad {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: #fff image-url('frontend/popup/ajaxLoader.gif') center center no-repeat;
+  padding: 0;
+}
+.nyroModalPrev, .nyroModalNext {
+  outline: none;
+  position: absolute;
+  top: 0;
+  height: 60%;
+  width: 150px;
+  min-height: 50px;
+  max-height: 300px;
+  cursor: pointer;
+  text-indent: -9999em;
+  background: transparent url('data:image/gif;base64,AAAA') left 20% no-repeat;
+}
+.nyroModalImage .nyroModalPrev, .nyroModalImage .nyroModalNext {
+  height: 100%;
+  width: 40%;
+  max-height: none;
+}
+.nyroModalPrev {
+  left: 0;
+}
+.nyroModalPrev:hover {
+  background-image: image-url('frontend/popup/prev.gif');
+}
+.nyroModalNext {
+  right: 0;
+  background-position: right 20%;
+}
+.nyroModalNext:hover {
+  background-position: right 20%;
+  background-image: image-url('frontend/popup/next.gif');
+}

@@ -13,6 +13,8 @@ gem 'mailboxer'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
+gem "therubyracer"
+gem "less-rails"
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -34,6 +36,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'bootstrap-sass'
 gem 'simple_form', "~> 3.0"
+gem 'omniauth'
+gem 'omniauth-facebook'
 
 group :development do
   gem "better_errors"

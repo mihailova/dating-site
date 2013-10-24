@@ -5,6 +5,7 @@ table.table
 		th Subject
 		th From
 		th Date
+		th
 	- @trash.each do |conversation|
 		tr class=(conversation.receipts_for(current_user).last.is_unread? ? "warning" : "")
 			td
@@ -13,3 +14,6 @@ table.table
 				= conversation.receipts_for(current_user).last.message.sender.name
 			td
 				= time_ago_in_words(conversation.receipts_for(current_user).last.created_at)
+			td
+				= link_to "delete", delete_conversation_path(conversation), method: "delete", class: "btn"
+				= link_to "restore", restore_conversation_path(conversation), method: "post", class: "btn"

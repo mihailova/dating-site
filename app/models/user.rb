@@ -17,6 +17,8 @@ class User < ActiveRecord::Base
   validates :gender, presence: true
   validates :search_for, presence: true
 
+  has_many :pictures, dependent: :destroy
+  accepts_nested_attributes_for :pictures, :allow_destroy => true
 
    def mailboxer_email(object)
    	self.email

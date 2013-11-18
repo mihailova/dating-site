@@ -9,5 +9,9 @@ FactoryGirl.define do
     password 12345678
     password_confirmation 12345678
     name "Ina Mihailova"
+    gender "male"
+    birth_date Date.today - 20.years
+    search_for "sex"
+    location "London"
    end
 end

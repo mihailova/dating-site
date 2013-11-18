@@ -4,7 +4,7 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
 require 'capybara/rspec'
-#require "paperclip/matchers"
+require "paperclip/matchers"
 
 include Warden::Test::Helpers
 include ActionView::Helpers::DateHelper
@@ -47,7 +47,7 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 
-  #config.include Paperclip::Shoulda::Matchers
+  config.include Paperclip::Shoulda::Matchers
 
   
 end
